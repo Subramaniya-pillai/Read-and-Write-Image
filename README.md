@@ -24,29 +24,58 @@ End the program and close the output image windows.
 i) #To Read,display the image
 ```
   import cv2
+  color_img=cv2.imread('coleman.jpg',1)
+  cv2.imshow('mycar',color_img)
+  cv2.waitKey(0)
+  cv2.destroyAllWindows()
+
 
 ```
 ii) #To write the image
 ```
+import cv2
+color_img=cv2.imread('coleman.jpg',0)
+w=cv2.imwrite('gtr.jpg',color_img)
+cv2.imshow('coleman',color_img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+
 
 
 
 ```
 iii) #Find the shape of the Image
 ```python3
-
+import cv2
+color=cv2.imread('coleman.jpg',-1)
+print(color.shape)
 
 
 ```
 iv) #To access rows and columns
 
 ```python3
-
+import random
+for i in range (100):
+    for j in range(color.shape[1]):
+        color[i][j]=[random.randint(0,255),random.randint(0,0),random.randint(0,0)]
+        ##color[i][j]=[255,0,0]
+cv2.imshow('coleman',color)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
 
 
 ```
 v) #To cut and paste portion of image
 ```python3
+import cv2
+color=cv2.imread('coleman.jpg',1)
+tag=color[200:300,200:300]
+color[100:200,100:200]=tag
+cv2.imshow('coleman',color)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
 
 
 
@@ -55,26 +84,23 @@ v) #To cut and paste portion of image
 ## Output:
 
 ### i) Read and display the image
-
-<br>
+![git](./11.png)
 <br>
 
 ### ii)Write the image
-
-<br>
+ ![git](./12.png)
 <br>
 
 ### iii)Shape of the Image
-
-<br>
+![git](./13.png)
 <br>
 
 ### iv)Access rows and columns
-<br>
+![git](./14.png)
 <br>
 
 ### v)Cut and paste portion of image
-<br>
+![git](./15.png)
 <br>
 
 ## Result:
